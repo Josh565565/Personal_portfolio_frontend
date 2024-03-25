@@ -2,118 +2,139 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- <link rel="stylesheet" href="output.css" /> -->
   <title>Okwor</title>
-  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <header>
-    <a href="index.html" class="okwor">Okwor</a>
+  <header class="bg-[#d3cbcb] flex h-20 items-center justify-between px-20">
+    <a href="index.html" class="text-[#f0724c] text-4xl font-bold hover:scale-105 first-line">Okwor</a>
     <nav>
-      <ul>
-        <li><a href="#">About Me</a></li>
-        <li><a href="#">Contact Me</a></li>
+      <ul class="flex gap-10 font-bold">
+        <li>
+          <a href="" class="bg-white px-4 py-2 rounded hover:text-red-400">Home</a>
+        </li>
+        <li><a href="#about" class="hover:text-red-400">About Me</a></li>
+        <li><a href="#projects" class="hover:text-red-400">Projects</a></li>
+        <li><a href="#contact" class="hover:text-red-400">Contact Me</a></li>
       </ul>
     </nav>
-    
   </header>
 
   <main>
-    <div>
-    <img src="images/Joshua_Okwor2.jpg" alt="joshua's image">
-    <h2 class="mainh2"><mark class="okw">Okwor</mark> Joshua Okechukwu</h2>
-    <p class="paragraph1">I am a web developer, I creat a nice and responsive website. My web development journey has been awesome so far.<br>
-      I like making a positive impact every where i go and i try to be the best in whatever I find myself doing.<br>
-      I am creative and I love challenging myself to explore new things.
-    </p>
-
-    <hr>
-
-    <div class="all1">
-      <div class="hobbies">
-        <h3>HOBBIES</h3>
-        <ul class="list1">
-          <li>CODING</li>
-          <li>READING</li>
-          <li>MUSIC</li>
-          <li>SPORT</li>
-          <li>MOVIES</li>
-        </ul>
+    <div id="home" class="flex items-center px-20 justify-between mt-10">
+      <div class="w-[500px] flex flex-col gap-10">
+        <h2 class="text-4xl"> <span class="text-blue-400 font-bold">Okwor</span> Joshua Okechukwu</h2>
+        <p class="text-balance">
+          I am a web developer, I creat a nice and responsive website. My web
+          development journey has been awesome so far.
+          I like making a positive impact every where i go and i try to be the
+          best in whatever I find myself doing.
+          I am creative and I love challenging myself to explore new things.
+        </p>
       </div>
-      <div class="priorities">
-        <h3>PRIORITIES</h3>
-        <ul class="list2">
-          <li>CODING</li>
-          <li>STUDING</li>
-          <li>MUSIC</li>
-          <li>SPORT</li>
-          <li>MOVIES</li>
-        </ul>
-      </div>
-      <div class="priorities">
-        <h3>SKILLS</h3>
-        <ul class="list2">
-          <li>JAVASCRIPT</li>
-          <li>HTML- CSS</li>
-          <li>PYTHON</li>
-          <li>PRODUCT-DISIGN</li>
-        </ul>
-      </div>
-      <div class="priorities">
-        <h3>SOFT SKILLS</h3>
-        <ul class="list2">
-          <li>COMMUNICATION</li>
-          <li>TEAM WORK</li>
-          <li>CREATIVE</li>
-        </ul>
+      <div class="w-[400px]  rounded object-cover">
+        <img class="object-fill rounded" src="images/Joshua_Okwor2.jpg" alt="joshua's image" />
       </div>
     </div>
-</div>
+
+    <div id="about" class="px-20 mt-20 bg-[#e7e6e6] rounded-md">
+      <h1 class="text-center text-3xl font-semibold pt-5 text-blue-500">About Me</h1>
+      <div class="flex justify-between py-20">
+        <div class="bg-white w-40 rounded p-2">
+          <h3 class="text-center text-blue-600 font-bold pb-2">HOBBIES</h3>
+          <ul class="list1">
+            <li>CODING</li>
+            <li>READING</li>
+            <li>MUSIC</li>
+            <li>SPORT</li>
+            <li>MOVIES</li>
+          </ul>
+        </div>
+        <div class="bg-white w-40 rounded p-2">
+          <h3 class="text-center text-blue-600 font-bold pb-2">PRIORITIES</h3>
+          <ul class="list2">
+            <li>CODING</li>
+            <li>STUDING</li>
+            <li>MUSIC</li>
+            <li>SPORT</li>
+            <li>MOVIES</li>
+          </ul>
+        </div>
+        <div class="bg-white w-40 rounded p-2">
+          <h3 class="text-center text-blue-600 font-bold pb-2">SKILLS</h3>
+          <ul class="list2">
+            <li>JAVASCRIPT</li>
+            <li>HTML- CSS</li>
+            <li>PYTHON</li>
+            <li>PRODUCT-DISIGN</li>
+          </ul>
+        </div>
+        <div class="bg-white w-40 rounded p-2">
+          <h3 class="text-center text-blue-600 font-bold pb-2">SOFT SKILLS</h3>
+          <ul class="list2">
+            <li>COMMUNICATION</li>
+            <li>TEAM WORK</li>
+            <li>CREATIVE</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
 
-    
+    <!-- Placeholder project start -->
+    <div id="projects" class="">
+      <h1 class="text-center text-3xl font-semibold pt-5 text-blue-500">Projects</h1>
+      <div class="p-20 flex justify-between">
+        <div class="bg-slate-300 p-10 rounded">
+          <h3 class="font-bold pb-2">Project 1</h3>
+          <p>My Portfolio Project</p>
+        </div>
+        <div class="bg-slate-300 p-10 rounded">
+          <h3 class="font-bold pb-2">Project 2</h3>
+          <p>My second peroject</p>
+        </div>
+        <div class="bg-slate-300 p-10 rounded">
+          <h3 class="font-bold pb-2">Project 3</h3>
+          <p>My third peroject</p>
+        </div>
+        <div class="bg-slate-300 p-10 rounded">
+          <h3 class="font-bold pb-2">Project 4</h3>
+          <p>My fourth peroject</p>
+        </div>
+      </div>
+    </div>
+    <!-- Placeholder project end -->
+    <!-- Contact Me start -->
+    <div id="contact" class="px-20 mt-20 bg-[#e7e6e6] rounded-md">
+      <h1 class="text-center text-3xl font-semibold pt-5 text-blue-500">Contact Me</h1>
+      <div class="flex justify-between py-10 items-center">
+        <div>
+          <h3 class="text-xl font-bold">Send a Message</h3>
+          <p>Fill in the form to send a message to me</p>
+        </div>
+        <div>
+          <form action="" class="flex flex-col gap-5">
+            <input type="text" placeholder="Name" class="h-10 w-[400px] px-2 rounded outline-none">
+            <input type="text" placeholder="Email" class="h-10 w-[400px] px-2 rounded outline-none">
+            <textarea placeholder="Message" name="" id="" cols="30" rows="5"
+              class="p-2 rounded w-[400px] outline-none"></textarea>
+            <input type="submit" value="Send"
+              class="bg-blue-400 text-white h-10 w-[400px] rounded font-bold hover:scale-105 cursor-pointer">
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- Contact Me end -->
   </main>
-  <div class="footer">
-    <a href="#">
-      <button class="mainbutton" type="button" name="contactme">CONTACT ME</button>
-    </a>
-  </div>
-
-  <!-- Placeholder project start -->
-  <div class="">
-    <h2 class="" style="text-align: center; color: #FFFFFF; margin-top: 50px; font-size: 40px; font-weight: bold;">Projects</h2>
-
-    <div class="" style="display: flex; justify-content: space-between; padding: 0px 100px 0px 100px;">
-        <div class="">
-            <!-- <img src="images/Project1.jpg" alt="project1"> -->
-            <h3>Project 1</h3>
-            <div class="projectDiv"></div>
-            <p>My first peroject</p>
-        </div>
-        <div class="">
-            <!-- <img src="images/Project1.jpg" alt="project1"> -->
-            <h3>Project 1</h3>
-            <div class="projectDiv"></div>
-            <p>My second peroject</p>
-        </div>
-        <div class="">
-            <!-- <img src="images/Project1.jpg" alt="project1"> -->
-            <h3>Project 1</h3>
-            <div class="projectDiv"></div>
-            <p>My third peroject</p>
-        </div>
-        <div class="">
-            <!-- <img src="images/Project1.jpg" alt="project1"> -->
-            <h3>Project 1</h3>
-            <div class="projectDiv"></div>
-            <p>My fourth peroject</p>
-        </div>
-    </div>
-</div>
-<!-- Placeholder project end -->
-
- 
+  <!-- Footer start -->
+  <footer class="flex items-center justify-center h-10 bg-[#121212]">
+    <p class="text-white">&COPY; 2024 Talent For Startup Project. All right reserved.</p>
+  </footer>
+  <!-- Footer end -->
 </body>
 
 </html>
