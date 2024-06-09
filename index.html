@@ -5,8 +5,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- <link rel="stylesheet" href="output.css" /> -->
   <title>Okwor</title>
+  <style>
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+    .details {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, padding 0.5s ease;
+    }
+    .details.open {
+        max-height: 200px;
+        padding-top: 10px;
+    }
+
+    .caret {
+    display: inline-block;
+    width: 10px;
+    background-color: black;
+    margin-left: 2px;
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% {
+        background-color: transparent;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -26,17 +57,19 @@
 
   <main>
     <div id="home" class="flex items-center px-20 justify-between mt-10">
-      <div class="w-[500px] flex flex-col gap-10">
-        <h2 class="text-4xl"> <span class="text-blue-400 font-bold">Okwor</span> Joshua Okechukwu</h2>
+      <div class="w-[500px] flex flex-col gap-5">
+        <div>
+        <h2 class="text-4xl"> <span class="text-blue-400 font-bold">I am a</span> <span id="change">Web developer</span></h2>
+      </div>
         <p class="text-balance">
-          I am a web developer, I creat a nice and responsive website. My web
+          My name is Okwor Joshua, I create nice and responsive websites. My web
           development journey has been awesome so far.
-          I like making a positive impact every where i go and i try to be the
+          I like making a positive impact everywhere I go and I try to be the
           best in whatever I find myself doing.
           I am creative and I love challenging myself to explore new things.
         </p>
       </div>
-      <div class="w-[400px]  rounded object-cover">
+      <div class="w-[400px] rounded object-cover">
         <img class="object-fill rounded" src="images/Joshua_Okwor2.jpg" alt="joshua's image" />
       </div>
     </div>
@@ -58,7 +91,7 @@
           <h3 class="text-center text-blue-600 font-bold pb-2">PRIORITIES</h3>
           <ul class="list2">
             <li>CODING</li>
-            <li>STUDING</li>
+            <li>STUDYING</li>
             <li>MUSIC</li>
             <li>SPORT</li>
             <li>MOVIES</li>
@@ -70,45 +103,27 @@
             <li>JAVASCRIPT</li>
             <li>HTML- CSS</li>
             <li>PYTHON</li>
-            <li>PRODUCT-DISIGN</li>
+            <li>PRODUCT DESIGN</li>
           </ul>
         </div>
         <div class="bg-white w-40 rounded p-2">
           <h3 class="text-center text-blue-600 font-bold pb-2">SOFT SKILLS</h3>
           <ul class="list2">
             <li>COMMUNICATION</li>
-            <li>TEAM WORK</li>
-            <li>CREATIVE</li>
+            <li>TEAMWORK</li>
+            <li>CREATIVITY</li>
           </ul>
         </div>
       </div>
     </div>
 
-
-    <!-- Placeholder project start -->
-    <div id="projects" class="">
-      <h1 class="text-center text-3xl font-semibold pt-5 text-blue-500">Projects</h1>
-      <div class="p-20 flex justify-between">
-        <div class="bg-slate-300 p-10 rounded">
-          <h3 class="font-bold pb-2">Project 1</h3>
-          <p>My Portfolio Project</p>
-        </div>
-        <div class="bg-slate-300 p-10 rounded">
-          <h3 class="font-bold pb-2">Project 2</h3>
-          <p>My second peroject</p>
-        </div>
-        <div class="bg-slate-300 p-10 rounded">
-          <h3 class="font-bold pb-2">Project 3</h3>
-          <p>My third peroject</p>
-        </div>
-        <div class="bg-slate-300 p-10 rounded">
-          <h3 class="font-bold pb-2">Project 4</h3>
-          <p>My fourth peroject</p>
-        </div>
+    <div id="projects" class="py-10">
+      <h1 class="text-center text-3xl font-semibold text-blue-500 mb-10">Projects</h1>
+      <div class="flex flex-wrap justify-center gap-10 px-10">
+        <!-- Project cards will be inserted here by JavaScript -->
       </div>
     </div>
-    <!-- Placeholder project end -->
-    <!-- Contact Me start -->
+
     <div id="contact" class="px-20 mt-20 bg-[#e7e6e6] rounded-md">
       <h1 class="text-center text-3xl font-semibold pt-5 text-blue-500">Contact Me</h1>
       <div class="flex justify-between py-10 items-center">
@@ -117,24 +132,22 @@
           <p>Fill in the form to send a message to me</p>
         </div>
         <div>
-          <form action="" class="flex flex-col gap-5">
-            <input type="text" placeholder="Name" class="h-10 w-[400px] px-2 rounded outline-none">
-            <input type="text" placeholder="Email" class="h-10 w-[400px] px-2 rounded outline-none">
-            <textarea placeholder="Message" name="" id="" cols="30" rows="5"
-              class="p-2 rounded w-[400px] outline-none"></textarea>
-            <input type="submit" value="Send"
-              class="bg-blue-400 text-white h-10 w-[400px] rounded font-bold hover:scale-105 cursor-pointer">
+          <form id="contact-form" class="flex flex-col gap-5">
+            <input type="text" id="name" placeholder="Name" class="h-10 w-[400px] px-2 rounded outline-none">
+            <input type="text" id="email" placeholder="Email" class="h-10 w-[400px] px-2 rounded outline-none">
+            <textarea id="message" placeholder="Message" cols="30" rows="5" class="p-2 rounded w-[400px] outline-none"></textarea>
+            <input type="submit" value="Send" class="bg-blue-400 text-white h-10 w-[400px] rounded font-bold hover:scale-105 cursor-pointer">
           </form>
         </div>
       </div>
     </div>
-    <!-- Contact Me end -->
   </main>
-  <!-- Footer start -->
+
   <footer class="flex items-center justify-center h-10 bg-[#121212]">
-    <p class="text-white">&COPY; 2024 Talent For Startup Project. All right reserved.</p>
+    <p class="text-white">&COPY; 2024 Talent For Startup Project. All rights reserved.</p>
   </footer>
-  <!-- Footer end -->
+
+  <script src="./index.js"></script>
 </body>
 
 </html>
